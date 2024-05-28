@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', 'sans-serif';
+}
+body {
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+div.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 130px;
+}
+div.card {
+    display: flex;
+    background: #eee;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+}
+div.card__right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+img.card__image {
+    max-height: 300px;
+    border-radius: 5px;
+}
+div.no-card-image {
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+}
+div.card__title {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+}
+div.card__description {
+    line-height: 1.5;
+}
+.card__list {
+    list-style: none;
+}
+.card__list span {
+    font-weight: 700;
+}
+div.counter {
+    display: flex;
+    bottom: 0;
+    left: 0;
+    gap: 10px;
+    align-items: center;
+    background-color: #ccc;
+    border-radius: 100px;
+    padding: 3px;
+}
+button.counter__button-inc,
+button.counter__button-dec {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 25px;
+}
+button.counter__button-inc:active,
+button.counter__button-dec:active,
+button.add-button:active {
+    background-color: #aaa;
+}
+button.counter__button-dec {
+    font-size: 37px;
+}
+button.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    background-color: #ccc;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    right: 0;
+    bottom: 0;
+}
+div.card__right__footer {
+    display: flex;
+    height: 36px;
+    justify-content: space-between;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
+div.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+    height: 70px;
+}
+button.cart {
+    padding: 10px 15px;
+    background: #ddd;
+    margin: 0px 10px;
+    border-radius: 100px;
+    font-size: 25px;
+}
+button.comics:active,
+button.characters:active,
+button.cart:active {
+    background-color: #bbb;
+}
+
+div.popup {
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background-color: #ddd;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    transition: all .3s ease-in-out;
+    transform: translateX(calc(100% + 60px));
+}
+div.popup.opened {
+    transform: translateX(0);
+    /* overflow-y: scroll; */
+}
+div.popup button.close {
+    transform: translateX(-110%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    font-size: 30px;
+    background: #ddd;
+}
+div.popup button.close:active {
+    background-color: #bbb;
+}
+
+div.popup__card .card__image {
+    max-height: 150px;
+}
+div.popup__card .no-card-image {
+    width: 100px;
+    height: 150px;
+}
+div.popup__cards {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    height: calc(100% - 150px);
+    scrollbar-width: 0;
+}
+/* div.popup__cards::-webkit-scrollbar {
+    width: 0;
+} */
+div.popup__card {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+div.card__desc {
+    width: 100%;
+}
+div.card__quantity {
+    margin-top: 10px;
+    font-size: 25px;
+}
+div.card__price {
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: end;
+    display: flex;
+    flex-direction: row-reverse;
+}
+div.card__price button {
+    padding: 10px 15px;
+    background: #ddd;
+    margin: 5px;
+    border-radius: 100px;
+    font-size: 15px;
+}
+.overflow-hidden {
+    overflow-y: hidden !important;
+}
+div.popup__total-price {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
